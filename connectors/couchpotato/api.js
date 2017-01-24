@@ -240,7 +240,7 @@
                 ssl: config.server.ssl
             }
 
-            return new couchpotato(options)
+            return apimap(new couchpotato(options))
         }
     }
 
