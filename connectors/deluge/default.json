@@ -2,8 +2,9 @@
     "enabled": false,
     "server": {
         "hostname": "localhost",
+        "password": "deluge",
         "port": 8112,
-        "password": "deluge"
+        "urlbase": null
     },
     "title": "Deluge"
 }

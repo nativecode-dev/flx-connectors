@@ -231,13 +231,13 @@
     module.exports = {
         connect: (config) => {
             const options = {
-                hostname: config.server.hostname,
-                post: config.server.port,
                 apiKey: config.server.apikey,
-                username: config.server.username,
+                hostname: config.server.hostname,
                 password: config.server.password,
+                post: config.server.port,
+                ssl: config.server.ssl,
                 urlBase: config.server.urlbase,
-                ssl: config.server.ssl
+                username: config.server.username
             }
 
             return apimap(new couchpotato(options))

@@ -1,9 +1,9 @@
 {
     "enabled": false,
     "server": {
+        "apikey": null,
         "hostname": "localhost",
         "port": 8989,
-        "apikey": null,
         "urlbase": null
     },
     "title": "Sonarr"

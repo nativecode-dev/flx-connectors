@@ -32,10 +32,11 @@
     module.exports = {
         connect: (config) => {
             const options = {
+                hash: config.server.password,
                 host: config.server.hostname,
-                port: config.server.port,
                 login: config.server.username,
-                hash: config.server.password
+                path: config.server.urlbase,
+                port: config.server.port
             }
 
             return apimap(new nzbget(options))

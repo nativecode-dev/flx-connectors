@@ -50,6 +50,9 @@
                     })
                 }
                 return api.get('series')
+            },
+            system: () => {
+                return api.get('system/status')
             }
         }
     }
@@ -57,9 +60,9 @@
     module.exports = {
         connect: (config) => {
             const options = {
+                apiKey: config.server.apikey,
                 hostname: config.server.hostname,
                 port: config.server.port,
-                apiKey: config.server.apikey,
                 urlBase: config.server.urlbase
             }
 
