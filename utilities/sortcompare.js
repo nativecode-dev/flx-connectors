@@ -3,11 +3,23 @@
     'use strict'
 
     const navigate = (value, path) => {
-        const parts = path.split('.')
-        for (let index = 0; index < parts.length; index++) {
-            const name = parts[index]
-            value = value[name]
+        const parts = path.split(':')
+        const properties = parts[0].split('.')
+        for (let index = 0; index < properties.length; index++) {
+            const property = properties[index]
+            value = value[property]
         }
+
+        if (parts.length === 2) {
+            const type = parts[1]
+            switch (type) {
+                case 'date':
+                    return new Date(value)
+                default:
+                    return value
+            }
+        }
+
         return value
     }
 

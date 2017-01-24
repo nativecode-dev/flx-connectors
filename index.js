@@ -17,6 +17,10 @@
         }
     })
 
+    const print_calendar = (series) => {
+        return util.format('%s - %s (%s)', series.series.title, series.title, series.airDate)
+    }
+
     const print_disk = (disk) => {
         return util.format('%s (%s)', disk.label, disk.path)
     }
@@ -29,7 +33,11 @@
 
     sonarr.calendar()
         .catch(error => console.error(error))
-        .done(response => console.log(response))
+        .done(series => sortcompare(series, 'series.airDate:date').forEach(info => {
+            if (info.hasFile === false) {
+                console.log('[calendar]', print_calendar(info))
+            }
+        }))
 
     sonarr.diskspace()
         .catch(error => console.error(error))

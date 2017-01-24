@@ -2,16 +2,34 @@
 
     'use strict'
 
+    const datetime = require('date-and-time')
     const sonarr = require('sonarr-api')
+
+    const datestring = (date) => {
+        const now = new Date()
+        const notime = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+
+        switch (date) {
+            case 'tomorrow':
+                return datetime.addDays(notime, 1)
+
+            case 'yesterday':
+                return datetime.addDays(notime, -1)
+
+            default:
+                return notime
+        }
+    }
 
     const apimap = (api) => {
         return {
             call: (method, ...args) => {
                 return api[method](...args)
             },
-            calendar: (startdate) => {
+            calendar: (start, end) => {
                 return api.get('calendar', {
-                    start: (startdate ? startdate : new Date()).toISOString()
+                    end: end ? datestring(end).toISOString() : null,
+                    start: start ? datestring(start).toISOString() : null
                 })
             },
             diskspace: () => {
