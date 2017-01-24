@@ -60,7 +60,7 @@
                 hostname: config.server.hostname,
                 port: config.server.port,
                 apiKey: config.server.apikey,
-                urlbase: config.server.urlbase
+                urlBase: config.server.urlbase
             }
 
             return apimap(new sonarr(options))

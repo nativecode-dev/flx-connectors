@@ -9,6 +9,7 @@
   "author": "Mike Pham (mpham@nativecode.com)",
   "license": "MIT",
   "dependencies": {
+    "couchpotato-api": "^0.1.0",
     "merge": "^1.2.0",
     "nzbget-api": "0.0.3",
     "promise": "^7.1.1",
