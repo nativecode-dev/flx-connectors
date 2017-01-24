@@ -3,7 +3,7 @@
     'use strict'
 
     const nzbget = require('nzbget-api')
-    const wrap = require('../../wrap')
+    const wrap = require('../../utilities/wrap')
 
     const apimap = (api) => {
         const request = (method, ...args) => {

@@ -6,8 +6,8 @@
     const merge = require('merge')
     const path = require('path')
 
-    const PATH_CONFIGS = path.join(__dirname, 'conf')
-    const PATH_CONNECTORS = path.join(__dirname, 'connectors')
+    const PATH_CONFIGS = path.join(__dirname, '..', 'conf')
+    const PATH_CONNECTORS = path.join(__dirname, '..', 'connectors')
 
     module.exports = {
         api: (name, config) => {
