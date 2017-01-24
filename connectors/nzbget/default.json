@@ -5,5 +5,6 @@
         "port": 6789,
         "username": "nzbget",
         "password": "tegbzn6789"
-    }
+    },
+    "title": "NZBGet"
 }

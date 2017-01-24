@@ -8,6 +8,30 @@
         return {
             call: (method, ...args) => {
                 return api[method](...args)
+            },
+            calendar: (startdate) => {
+                return api.get('calendar', {
+                    start: (startdate ? startdate : new Date()).toISOString()
+                })
+            },
+            diskspace: () => {
+                return api.get('diskspace')
+            },
+            profiles: () => {
+                return api.get('profile')
+            },
+            rootfolders: () => {
+                return api.get('rootfolder')
+            },
+            series: (id) => {
+                if (Number.isInteger(id)) {
+                    return api.get('series/' + id)
+                } else if (id) {
+                    return api.get('series/lookup', {
+                        term: id
+                    })
+                }
+                return api.get('series')
             }
         }
     }

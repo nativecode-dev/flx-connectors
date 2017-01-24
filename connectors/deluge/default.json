@@ -4,5 +4,6 @@
         "hostname": "localhost",
         "port": 8112,
         "password": "deluge"
-    }
+    },
+    "title": "Deluge"
 }
