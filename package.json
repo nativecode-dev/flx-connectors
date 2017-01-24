@@ -1,0 +1,16 @@
+{
+  "name": "flixman",
+  "version": "0.0.1",
+  "description": "FlixMan",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Mike Pham (mpham@nativecode.com)",
+  "license": "MIT",
+  "dependencies": {
+    "merge": "^1.2.0",
+    "nzbget-api": "0.0.3",
+    "promise": "^7.1.1"
+  }
+}

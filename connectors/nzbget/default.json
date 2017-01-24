@@ -1,0 +1,9 @@
+{
+    "enabled": false,
+    "server": {
+        "hostname": "localhost",
+        "port": 6789,
+        "username": "nzbget",
+        "password": "tegbzn6789"
+    }
+}

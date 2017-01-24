@@ -1,0 +1,8 @@
+{
+    "enabled": false,
+    "server": {
+        "hostname": "localhost",
+        "port": 8112,
+        "password": "deluge"
+    }
+}

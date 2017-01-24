@@ -1,0 +1,9 @@
+{
+    "enabled": false,
+    "server": {
+        "hostname": "localhost",
+        "port": 8989,
+        "username": null,
+        "password": null
+    }
+}
