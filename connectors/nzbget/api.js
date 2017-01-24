@@ -30,7 +30,7 @@
     }
 
     module.exports = {
-        api: (config) => {
+        connect: (config) => {
             const options = {
                 host: config.server.hostname,
                 port: config.server.port,

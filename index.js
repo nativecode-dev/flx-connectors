@@ -3,6 +3,7 @@
     'use strict'
 
     const config = require('./utilities/config')
+    const merge = require('merge')
     const path = require('path')
     const process = require('process')
     const sortcompare = require('./utilities/sortcompare')
@@ -10,15 +11,11 @@
 
     const servers = {}
     config.list().forEach(connector => {
-        let loaded = {}
         const settings = config.load(connector)
         if (settings.enabled) {
             servers[connector] = {
-                api: () => {
-                    if (loaded[connector] === undefined) {
-                        loaded[connector] = config.api(connector, settings)
-                    }
-                    return loaded[connector]
+                connect: (overrides) => {
+                    return config.api(connector, merge.recursive(true, settings, overrides))
                 },
                 config: settings
             }

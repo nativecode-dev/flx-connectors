@@ -12,7 +12,7 @@
     module.exports = {
         api: (name, config) => {
             const filename = path.join(PATH_CONNECTORS, name, 'api.js')
-            return require(filename).api(config)
+            return require(filename).connect(config)
         },
         list: () => {
             return fs.readdirSync(PATH_CONNECTORS)

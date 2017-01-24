@@ -3,7 +3,7 @@
     'use strict'
 
     module.exports = {
-        api: (config) => {
+        connect: (config) => {
             return {}
         }
     }

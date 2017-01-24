@@ -229,7 +229,7 @@
     }
 
     module.exports = {
-        api: (config) => {
+        connect: (config) => {
             const options = {
                 hostname: config.server.hostname,
                 post: config.server.port,
