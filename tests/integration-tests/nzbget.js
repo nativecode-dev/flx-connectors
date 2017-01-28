@@ -1,13 +1,14 @@
-const env = require('process').env
+const fs = require('fs')
+const path = require('path')
 
-if (env.INTEGRATIONS) {
+const configfile = path.join(__dirname, '../..', 'conf/configurations.json')
+
+if (fs.existsSync(configfile)) {
 
     const expect = require('chai').expect
-    const fs = require('fs')
     const mocha = require('mocha')
-    const path = require('path')
 
-    const configurations = JSON.parse(fs.readFileSync(path.join(__dirname, '../..', 'conf/configurations.json')))
+    const configurations = JSON.parse(fs.readFileSync(configfile))
 
     describe('when using nzbget', () => {
         describe('RPC calls', () => {
