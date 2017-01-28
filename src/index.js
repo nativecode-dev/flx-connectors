@@ -2,7 +2,7 @@
 
     'use strict'
 
-    const loader = require('./utilities/loader')
+    const loader = require('./loader')
     const merge = require('merge')
 
     module.exports = () => {
@@ -11,8 +11,9 @@
         loader.list().forEach(connector => {
             const options = loader.load(connector)
             api[connector] = {
-                connect: () => {
-                    return loader.api(connector, options)
+                connect: overrides => {
+                    const settings = merge.recursive(true, options, overrides)
+                    return loader.api(connector, settings)
                 },
                 options: options
             }

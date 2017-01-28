@@ -1,11 +1,12 @@
 const expect = require('chai').expect
 const mocha = require('mocha')
 
-const connectors = require('../lib/index')
+const connectors = require('../../lib/index')
 
-describe('when getting connections', () => {
-    describe('the connectors', () => {
+describe('when using connectors', () => {
+    describe('each configuration', () => {
         const clients = connectors()
+
         it('should support couchpotato', () => {
             expect(clients).to.have.property('couchpotato')
         })

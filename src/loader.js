@@ -6,7 +6,7 @@
     const merge = require('merge')
     const path = require('path')
 
-    const PATH_CONNECTORS = path.join(__dirname, '..', 'connectors')
+    const PATH_CONNECTORS = path.join(__dirname, 'connectors')
 
     module.exports = {
         api: (name, config) => {
@@ -17,8 +17,8 @@
             return fs.readdirSync(PATH_CONNECTORS)
         },
         load: (name) => {
-            const options = path.join(PATH_CONNECTORS, name, 'default.json')
-            return JSON.parse(fs.readFileSync(options))
+            const filename = path.join(PATH_CONNECTORS, name, 'default.json')
+            return JSON.parse(fs.readFileSync(filename))
         }
     }
 

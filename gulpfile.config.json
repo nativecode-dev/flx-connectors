@@ -2,11 +2,15 @@
     "babel": {
         "presets": ["es2015"]
     },
+    "clean": {
+        "force": true
+    },
     "destination": {
         "lib": "lib"
     },
     "mocha": {
-        "reporter": "spec"
+        "reporter": "list",
+        "timeout": 5000
     },
     "sources": {
         "js": ["src/**/*.js"],
