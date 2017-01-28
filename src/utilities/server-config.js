@@ -8,7 +8,6 @@
 
     const PATH_CONFIGS = 'conf'
     const PATH_CONNECTORS = path.join(__dirname, '..', 'connectors')
-    console.log(__dirname)
 
     module.exports = {
         api: (name, config) => {

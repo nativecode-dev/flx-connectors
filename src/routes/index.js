@@ -3,8 +3,8 @@
     'use strict'
 
     module.exports = app => {
-        return (request, response) => {
-            response.end('/')
+        return (request, rest) => {
+            rest.ok(app.connectors)
         }
     }
 

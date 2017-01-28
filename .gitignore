@@ -1,4 +1,6 @@
+.vscode/
 conf/
+lib/
 node_modules/
 logs/
 

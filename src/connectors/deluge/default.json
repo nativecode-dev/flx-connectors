@@ -4,7 +4,8 @@
         "hostname": "localhost",
         "password": "deluge",
         "port": 8112,
-        "urlbase": null
+        "ssl": false,
+        "urlbase": "/json"
     },
     "title": "Deluge"
 }
