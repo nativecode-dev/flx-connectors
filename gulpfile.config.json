@@ -1,0 +1,16 @@
+{
+    "babel": {
+        "presets": ["es2015"]
+    },
+    "destination": {
+        "lib": "lib"
+    },
+    "mocha": {
+        "reporter": "spec"
+    },
+    "sources": {
+        "js": ["src/**/*.js"],
+        "json": ["src/**/*.json"],
+        "tests": ["tests/**/*.js"]
+    }
+}

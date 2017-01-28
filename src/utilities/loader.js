@@ -6,7 +6,6 @@
     const merge = require('merge')
     const path = require('path')
 
-    const PATH_CONFIGS = 'conf'
     const PATH_CONNECTORS = path.join(__dirname, '..', 'connectors')
 
     module.exports = {
@@ -17,18 +16,9 @@
         list: () => {
             return fs.readdirSync(PATH_CONNECTORS)
         },
-        load: (confname) => {
-            const confuser = path.join(PATH_CONFIGS, confname + '.json')
-            const confdefault = path.join(PATH_CONNECTORS, confname, 'default.json')
-
-            const conf = JSON.parse(fs.readFileSync(confdefault))
-
-            if (fs.existsSync(confuser)) {
-                const user = JSON.parse(fs.readFileSync(confuser))
-                return merge.recursive(true, conf, user)
-            }
-
-            return conf
+        load: (name) => {
+            const options = path.join(PATH_CONNECTORS, name, 'default.json')
+            return JSON.parse(fs.readFileSync(options))
         }
     }
 
