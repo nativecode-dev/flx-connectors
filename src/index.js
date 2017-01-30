@@ -2,24 +2,28 @@
 
     'use strict'
 
-    const loader = require('./loader')
+    const fs = require('fs')
     const merge = require('merge')
+    const path = require('path')
 
-    module.exports = () => {
-        let api = {}
+    const PATH_CONNECTORS = path.join(__dirname, 'connectors')
 
-        loader.list().forEach(connector => {
-            const options = loader.load(connector)
-            api[connector] = {
-                connect: overrides => {
-                    const settings = merge.recursive(true, options, overrides)
-                    return loader.api(connector, settings)
-                },
-                options: options
-            }
-        })
+    const api = (name, config) => {
+        const filename = path.join(PATH_CONNECTORS, name, 'api.js')
+        const connector = require(filename)
+        return connector(config)
+    }
 
-        return api
+    module.exports = {
+        connect: (name, options) => {
+            const filename = path.join(PATH_CONNECTORS, name, 'default.json')
+            const defaults = JSON.parse(fs.readFileSync(filename))
+
+            return api(name, merge.recursive(true, defaults, options || {}))
+        },
+        list: () => {
+            return fs.readdirSync(PATH_CONNECTORS)
+        }
     }
 
 })()

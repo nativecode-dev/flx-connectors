@@ -2,7 +2,7 @@ const expect = require('chai').expect
 const merge = require('merge')
 const mocha = require('mocha')
 
-const client = require('../../lib/utilities/client')
+const Client = require('../../lib/utilities/client')
 
 describe('when using http client', () => {
     const options = {
@@ -13,7 +13,7 @@ describe('when using http client', () => {
     const FILENAME = 'Cities.of.the.Underworld.S01E09.720p.HDTV.x264-REGRET'
 
     it('should execute GET request', done => {
-        const http = new client(merge(true, options, {
+        const http = new Client(merge(true, options, {
             params: {
                 filename: FILENAME
             }
@@ -26,7 +26,7 @@ describe('when using http client', () => {
     })
 
     it('should execute POST request', done => {
-        const http = new client(options)
+        const http = new Client(options)
         const body = {
             filename: [FILENAME]
         }

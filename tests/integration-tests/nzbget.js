@@ -14,7 +14,7 @@ fs.exists(configfile, exists => {
         describe('when using nzbget', () => {
             describe('RPC calls', () => {
                 const connectors = require('../../lib/index')
-                const api = connectors().nzbget.connect(configurations.nzbget)
+                const api = connectors.connect('nzbget', configurations.nzbget)
 
                 it('should get configuration', done => {
                     api.config().catch(error => done(error)).done(config => {

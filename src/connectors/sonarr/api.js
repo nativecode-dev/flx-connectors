@@ -109,17 +109,15 @@
         }
     }
 
-    module.exports = {
-        connect: (config) => {
-            const options = {
-                apiKey: config.server.apikey,
-                hostname: config.server.hostname,
-                port: config.server.port,
-                urlBase: config.server.urlbase
-            }
-
-            return apimap(new sonarr(options))
+    module.exports = (config) => {
+        const options = {
+            apiKey: config.server.apikey,
+            hostname: config.server.hostname,
+            port: config.server.port,
+            urlBase: config.server.urlbase
         }
+
+        return apimap(new sonarr(options))
     }
 
 })()

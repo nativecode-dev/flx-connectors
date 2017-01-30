@@ -228,20 +228,18 @@
         }
     }
 
-    module.exports = {
-        connect: (config) => {
-            const options = {
-                apiKey: config.server.apikey,
-                hostname: config.server.hostname,
-                password: config.server.password,
-                post: config.server.port,
-                ssl: config.server.ssl,
-                urlBase: config.server.urlbase,
-                username: config.server.username
-            }
-
-            return apimap(new couchpotato(options))
+    module.exports = (config) => {
+        const options = {
+            apiKey: config.server.apikey,
+            hostname: config.server.hostname,
+            password: config.server.password,
+            post: config.server.port,
+            ssl: config.server.ssl,
+            urlBase: config.server.urlbase,
+            username: config.server.username
         }
+
+        return apimap(new couchpotato(options))
     }
 
 })()

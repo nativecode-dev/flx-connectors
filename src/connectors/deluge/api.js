@@ -37,16 +37,14 @@
         return this
     }
 
-    module.exports = {
-        connect: (config) => {
-            const options = {
-                host: config.server.hostname,
-                password: config.server.password,
-                urlbase: config.server.urlbase
-            }
-
-            return new Deluge(options)
+    module.exports = (config) => {
+        const options = {
+            host: config.server.hostname,
+            password: config.server.password,
+            urlbase: config.server.urlbase
         }
+
+        return new Deluge(options)
     }
 
 })()

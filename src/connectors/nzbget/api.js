@@ -29,18 +29,16 @@
         }
     }
 
-    module.exports = {
-        connect: (config) => {
-            const options = {
-                hash: config.server.password,
-                host: config.server.hostname,
-                login: config.server.username,
-                path: config.server.urlbase,
-                port: config.server.port
-            }
-
-            return apimap(new nzbget(options))
+    module.exports = (config) => {
+        const options = {
+            hash: config.server.password,
+            host: config.server.hostname,
+            login: config.server.username,
+            path: config.server.urlbase,
+            port: config.server.port
         }
+
+        return apimap(new nzbget(options))
     }
 
 })()

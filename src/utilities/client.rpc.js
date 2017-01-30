@@ -2,10 +2,10 @@
 
     'use strict'
 
-    const client = require('./client')
+    const Client = require('./client')
 
     module.exports = options => {
-        const http = client(options)
+        const http = new Client(options)
     }
 
 })()

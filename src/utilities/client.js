@@ -45,23 +45,23 @@
             return request
         }
 
-        this.delete = function (contents, headers) {
+        this.delete = (contents, headers) => {
             return this.call('delete', contents, headers)
         }
 
-        this.get = function (contents, headers) {
+        this.get = (contents, headers) => {
             return this.call('get', contents, headers)
         }
 
-        this.post = function (contents, headers) {
+        this.post = (contents, headers) => {
             return this.call('post', contents, headers)
         }
 
-        this.put = function (contents, headers) {
+        this.put = (contents, headers) => {
             return this.call('put', contents, headers)
         }
 
-        this.update = function (contents, headers) {
+        this.update = (contents, headers) => {
             return this.call('update', contents, headers)
         }
 
