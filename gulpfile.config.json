@@ -10,7 +10,7 @@
     },
     "mocha": {
         "reporter": "list",
-        "timeout": 5000
+        "timeout": 10000
     },
     "sources": {
         "js": ["src/**/*.js"],

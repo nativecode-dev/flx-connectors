@@ -18,7 +18,6 @@
         connect: (name, options) => {
             const filename = path.join(PATH_CONNECTORS, name, 'default.json')
             const defaults = JSON.parse(fs.readFileSync(filename))
-
             return api(name, merge.recursive(true, defaults, options || {}))
         },
         list: () => {

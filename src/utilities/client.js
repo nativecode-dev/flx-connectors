@@ -18,7 +18,7 @@
         username: undefined
     }
 
-    module.exports = function (options) {
+    module.exports = function Client(options) {
         const settings = merge.recursive(true, DEFAULTS, options)
         let cookies = unirest.jar()
 
