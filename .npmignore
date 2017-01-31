@@ -3,6 +3,8 @@ conf/
 node_modules/
 logs/
 src/
+tests/
 
 .npmrc
+gulpfile.*
 npm-debug.log
