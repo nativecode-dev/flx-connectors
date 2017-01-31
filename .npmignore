@@ -1,8 +1,8 @@
 .vscode/
 conf/
-lib/
 node_modules/
 logs/
+src/
 
 .npmrc
 npm-debug.log
