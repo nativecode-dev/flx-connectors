@@ -43,7 +43,7 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
-    "prepublish": "gulp clean && gulp test",
+    "prepublish": "npm shrinkwrap && gulp clean && gulp test",
     "setup": "npm install && gulp test",
     "test": "gulp test"
   }
