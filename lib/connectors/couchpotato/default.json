@@ -1,0 +1,13 @@
+{
+    "enabled": false,
+    "server": {
+        "apikey": "deluge",
+        "hostname": "localhost",
+        "password": null,
+        "port": 5050,
+        "ssl": false,
+        "urlbase": null,
+        "username": null
+    },
+    "title": "CouchPotato"
+}

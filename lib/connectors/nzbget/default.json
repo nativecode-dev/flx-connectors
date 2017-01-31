@@ -1,0 +1,11 @@
+{
+    "enabled": false,
+    "server": {
+        "hostname": "localhost",
+        "password": "tegbzn6789",
+        "port": 6789,
+        "urlbase": "/jsonrpc",
+        "username": "nzbget"
+    },
+    "title": "NZBGet"
+}

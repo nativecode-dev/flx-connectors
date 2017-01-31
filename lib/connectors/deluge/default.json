@@ -1,0 +1,11 @@
+{
+    "enabled": false,
+    "server": {
+        "hostname": "localhost",
+        "password": "deluge",
+        "port": 8112,
+        "ssl": false,
+        "urlbase": "/json"
+    },
+    "title": "Deluge"
+}
