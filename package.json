@@ -40,6 +40,10 @@
   "publishConfig": {
     "registry": "https://npm.nativecode.com/repository/npm-nativecode/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nativecode-dev/flx-connectors"
+  },
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
